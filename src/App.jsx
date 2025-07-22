@@ -8,7 +8,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import ForgotPassword from './Pages/ForgotPassword';
 import Navbar from './Components/Navbar';
-import ContactUs from './Pages/Contactus';
+import ContactUs from './Pages/Category';
 
 function App() {
   return (
