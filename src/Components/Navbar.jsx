@@ -1,17 +1,47 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // optional, install: npm i lucide-react
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md px-4 py-3">
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
-        <Link to="/" className="text-2xl font-bold text-red-600">
+    <nav className="bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-xl font-bold text-red-600">
           F1Streetwear
         </Link>
+
+        {/* Toggle Button (Mobile) */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-700 focus:outline-none"
+        >
+          {/* Hamburger Icon */}
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 font-medium">
@@ -20,23 +50,15 @@ const Navbar = () => {
           <Link to="/cart" className="hover:text-red-500">Cart</Link>
           <Link to="/login" className="hover:text-red-500">Login</Link>
         </div>
-
-        {/* Mobile Toggle Button */}
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden mt-3 space-y-2 text-center font-medium">
-          <Link to="/" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/category/tees" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Categories</Link>
-          <Link to="/cart" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Cart</Link>
-          <Link to="/login" className="block hover:text-red-500" onClick={() => setMenuOpen(false)}>Login</Link>
+      {isOpen && (
+        <div className="md:hidden px-4 pb-4 space-y-2 font-medium">
+          <Link to="/" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Home</Link>
+          <Link to="/category/tees" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Categories</Link>
+          <Link to="/cart" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Cart</Link>
+          <Link to="/login" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Login</Link>
         </div>
       )}
     </nav>
