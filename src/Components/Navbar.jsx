@@ -56,7 +56,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2 font-medium">
           <Link to="/" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/category/tees" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Categories</Link>
+          <Link to="/contactus" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>ContactUs</Link>
           <Link to="/cart" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Cart</Link>
           <Link to="/login" className="block hover:text-red-500" onClick={() => setIsOpen(false)}>Login</Link>
         </div>
