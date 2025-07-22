@@ -2,13 +2,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import Category from './Pages/Category';
 import Product from './Pages/Product'; // ✅ keep only this for product details
 import Cart from './Pages/Cart';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import ForgotPassword from './Pages/ForgotPassword';
 import Navbar from './Components/Navbar';
+import ContactUs from './Pages/Contactus';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/category/:id" element={<Category />} />
+        <Route path="/contactus" element={<ContactUs />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />

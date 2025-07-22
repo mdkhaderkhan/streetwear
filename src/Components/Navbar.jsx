@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 font-medium">
           <Link to="/" className="hover:text-red-500">Home</Link>
-          <Link to="/category/tees" className="hover:text-red-500">Categories</Link>
+          <Link to="/contactus" className="hover:text-red-500">Contactus</Link>
           <Link to="/cart" className="hover:text-red-500">Cart</Link>
           <Link to="/login" className="hover:text-red-500">Login</Link>
         </div>
